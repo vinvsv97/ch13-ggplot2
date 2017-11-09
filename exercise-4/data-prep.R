@@ -16,6 +16,7 @@ FormatNumbers <- function(col, data) {
 # Format the numeric columns
 county.data <- data.frame(lapply(colnames(raw.county.data), FormatNumbers, data=raw.county.data), stringsAsFactors = FALSE)
 colnames(county.data) <- tolower(colnames(raw.county.data))
+colnames(county.data)[1] <- c('county.name') 
 county.data <- county.data %>% 
   mutate(county = gsub(" County", "", county.name)) %>% 
   select(-county.name) %>% 

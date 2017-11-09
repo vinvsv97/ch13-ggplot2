@@ -5,10 +5,10 @@ library(dplyr)
 library(ggplot2)
 
 # Read, and then `source` the data-prep.R file. The `all.data` variable is now available
-
+source("data-prep.R")
 
 # Create a column of percentage of registered voters who voted
-
+all.data <- all.data %>% mutate(percentage = total.voted * 100 / registered.voters)
 
 # Start by making a new `ggplot` with `all.data` as the data (no geometry yet)
 # What do you see?
