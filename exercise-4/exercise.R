@@ -11,7 +11,7 @@ source("./data-prep.R")
 all.data <- all.data %>% 
             mutate(pct.voted = total.voted/registered.voters)
 
-# Start by making a new `ggplot` with the `diamonds.sample` as the data (no geometry yet)
+# Start by making a new `ggplot` with `all.data` as the data (no geometry yet)
 # What do you see?
 ggplot(data = all.data)
 
